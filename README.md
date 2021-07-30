@@ -35,3 +35,14 @@ Download the environment from one of the links below. You need only select the e
 
 
 ### Instructions
+
+There are two ways , one can run the banacollector agent training:<br/>
+
+1. Run Navigation.pynb ( with zypyter notebook, this is modified version of code supplied with the udacity project assignment. You need to spcify the environment path.)
+2. Run bctraining.py with supplying environment path at commandline.
+
+The programs generate two outputs: 
+1. bcweights.pth ( the network weight for the DQN network).
+2. bctraining.png ( plot of average return with number of episodes)
+
+The programs exit when average return reaches to more than 13.0.
