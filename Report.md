@@ -13,11 +13,11 @@ I used Deep Q-Neural Network (DQN) underlying learning algorithms for training t
 
 Below are the hyper parameters which are used in this project:
 
-BUFFER_SIZE = int(1e6)  # replay buffer size <br />
-BATCH_SIZE = 64         # minibatch size  <br />
-GAMMA = 0.99            # discount factor <br />
-LR = 5e-4               # learning rate <br />
-UPDATE_FREQUENCY = 4    # how often to update the network <br />
+BUFFER_SIZE = int(1e6)  <p>&nbsp;</p># replay buffer size <br />
+BATCH_SIZE = 64         <p>&nbsp;</p># minibatch size  <br />
+GAMMA = 0.99            <p>&nbsp;</p># discount factor <br />
+LR = 5e-4               <p>&nbsp;</p># learning rate <br />
+UPDATE_FREQUENCY = 4    <p>&nbsp;</p># how often to update the network <br />
 
 
 ### Architecture of Neural Network Used:
