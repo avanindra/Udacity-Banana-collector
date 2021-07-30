@@ -13,8 +13,8 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Agent():
     """Interacts with and learns from the environment."""
 
-    def __init__(self, state_size, action_size, seed=1412, nb_hidden=128, learning_rate=5e-4, memory_size=int(1e5),
-                 prioritized_memory=False, batch_size=64, gamma=0.99, small_eps=1e-5, update_frequency=4):
+    def __init__(self, state_size, action_size, seed=1412, learning_rate=5e-4, memory_size=int(1e6),
+                 batch_size=64, gamma=0.99, small_eps=1e-5, update_frequency=4):
         """Initialize an Agent object.
         
         Params
@@ -24,7 +24,7 @@ class Agent():
             seed (int): random seed
             nb_hidden (int): intermediate layer size 
             learning_rate (float): learning rate of networks
-            memory_size (int): max memory size of replay/priority buffer
+            memory_size (int): max memory size of replay buffer
             batch_size (int): batch size to do learning
             gamma (float): discount rate
             update_frequency (int): n episodes after which to update the target network from local network
@@ -68,7 +68,7 @@ class Agent():
         
         Params
         ======
-            state (array_like): current state
+            state : current state
             eps : epsilon, for epsilon-greedy action selection
         """
         state = torch.from_numpy(state).float().unsqueeze(0).to(device)
