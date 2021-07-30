@@ -17,9 +17,9 @@ class DeepQNetwork(nn.Module):
         """
         super(DeepQNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
-        self.fc1 = nn.Linear(state_size, 64, bias=False)
-        self.fc2 = nn.Linear(64, 64, bias=False)
-        self.fc3 = nn.Linear(64, action_size, bias=False)
+        self.fc1 = nn.Linear(state_size, 128, bias=False)
+        self.fc2 = nn.Linear(128, 128, bias=False)
+        self.fc3 = nn.Linear(128, action_size, bias=False)
 
     def forward(self, state):
         x = F.relu(self.fc1(state))

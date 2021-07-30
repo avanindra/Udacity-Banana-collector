@@ -55,47 +55,54 @@ def DeepQLearnTrain(agent, n_episodes=100, print_range=10, eps_start=1.0, eps_en
             
     return scores, i, np.mean(scores_window)
 
-env = UnityEnvironment(file_name="D:/deep-reinforcement-learning/p1_navigation/Banana_Windows_x86_64/Banana.exe")
 
 
-# get the default brain
-brain_name = env.brain_names[0]
-brain = env.brains[brain_name]
+if __name__ == '__main__':
 
-# reset the environment
-env_info = env.reset(train_mode=True)[brain_name]
-
-# number of agents in the environment
-print('Number of agents:', len(env_info.agents))
-
-# number of actions
-action_size = brain.vector_action_space_size
-print('Number of actions:', action_size)
-
-# examine the state space 
-state = env_info.vector_observations[0]
-print('States look like:', state)
-state_size = len(state)
-print('States have length:', state_size)
+    if len(sys.argv) == 2:
+        env = UnityEnvironment(file_name=sys.argv[1])
+    else :
+        env = UnityEnvironment(file_name="D:/deep-reinforcement-learning/p1_navigation/Banana_Windows_x86_64/Banana.exe")
 
 
-env_info = env.reset(train_mode=True)[brain_name]
+    # get the default brain
+    brain_name = env.brain_names[0]
+    brain = env.brains[brain_name]
 
-agent = Agent(state_size=state_size, action_size=action_size, seed=199, nb_hidden=(64, 64),
-              learning_rate=0.001, memory_size=int(1e6), prioritized_memory=False, batch_size=64,
-              gamma=0.9, small_eps=0.03, update_frequency=4)
+    # reset the environment
+    env_info = env.reset(train_mode=True)[brain_name]
 
-scores, episodes, last_avg_score = DeepQLearnTrain(agent, n_episodes=600, early_stop=13, verbose=True)
+    # number of agents in the environment
+    print('Number of agents:', len(env_info.agents))
 
-agent.save_model("bcmodel.pt")
+    # number of actions
+    action_size = brain.vector_action_space_size
+    print('Number of actions:', action_size)
 
-# plot the scores
-fig = plt.figure()
-ax = fig.add_subplot(111)
-plt.plot(np.arange(len(scores)), scores)
-plt.ylabel('Average Score')
-plt.xlabel('Episode #')
-# plt.show()
+    # examine the state space 
+    state = env_info.vector_observations[0]
+    print('States look like:', state)
+    state_size = len(state)
+    print('States have length:', state_size)
 
-plt.savefig('bctraining.png')
+
+    env_info = env.reset(train_mode=True)[brain_name]
+
+    agent = Agent(state_size=state_size, action_size=action_size, seed=199, nb_hidden=(64, 64),
+                learning_rate=0.001, memory_size=int(1e6), prioritized_memory=False, batch_size=64,
+                gamma=0.9, small_eps=0.03, update_frequency=4)
+
+    scores, episodes, last_avg_score = DeepQLearnTrain(agent, n_episodes=600, early_stop=13, verbose=True)
+
+    agent.save_model("bcmodel.pt")
+
+    # plot the scores
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    plt.plot(np.arange(len(scores)), scores)
+    plt.ylabel('Average Score')
+    plt.xlabel('Episode #')
+    # plt.show()
+
+    plt.savefig('bctraining.png')
 
