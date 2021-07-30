@@ -26,6 +26,10 @@ UPDATE_FREQUENCY = 4    # how often to update the network
 
 ### Plot of Rewards:
 
+<img src="bctraining.png"/>
+
+Saved Model: [bcweights.pth](bcweights.pth)
+
 
 
 ### Ideas for Future Work:
