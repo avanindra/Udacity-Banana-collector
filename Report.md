@@ -13,14 +13,20 @@ I used Deep Q-Neural Network (DQN) underlying learning algorithms for training t
 
 Below are the hyper parameters which are used in this project:
 
-BUFFER_SIZE = int(1e6)  # replay buffer size
-BATCH_SIZE = 64         # minibatch size
-GAMMA = 0.99            # discount factor
-LR = 5e-4               # learning rate 
-UPDATE_FREQUENCY = 4    # how often to update the network
+BUFFER_SIZE = int(1e6)  # replay buffer size <br />
+BATCH_SIZE = 64         # minibatch size  <br />
+GAMMA = 0.99            # discount factor <br />
+LR = 5e-4               # learning rate <br />
+UPDATE_FREQUENCY = 4    # how often to update the network <br />
 
 
 ### Architecture of Neural Network Used:
+
+The DQN netowrk has four layers. 
+
+1. First layer is the input layer which has 37 nodes , which take states as input.
+2. The second and third layer are intermediate layers , each have 64 nodes.
+3. The fourth layer is output layer which has 4 nodes ( same as number of actions.)
 
 
 
