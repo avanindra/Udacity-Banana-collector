@@ -1,4 +1,4 @@
-# Project 1: Banana Collector
+# Project 1: Banana Collector (Report)
 
 This project train an agent to navigate and collect bananas in a large, square world.
 
