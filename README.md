@@ -51,7 +51,7 @@ The task is episodic, and in order to solve the environment, your agent must get
    python -m ipykernel install --user --name drlnd --display-name "drlnd"
    ```
 
-4. Before running code in a notebook, change the kernel to match the `drlnd` environment by using the drop-down `Kernel` menu. ![Kernel][image2]
+4. Before running code in a notebook, change the kernel to match the `drlnd` environment by using the drop-down `Kernel` menu.
 
 5. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
 
@@ -79,7 +79,7 @@ There are two ways , one can run the banacollector agent training:<br/>
 2. Run bctraining.py with supplying environment path at commandline.
 
 The programs generate two outputs: 
-1. bcweights.pth ( the network weight for the DQN network).
+1. bcmodel.pt ( the network weight for the DQN network).
 2. bctraining.png ( plot of average return with number of episodes)
 
 The programs exit when average return reaches to more than 13.0.
