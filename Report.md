@@ -40,6 +40,9 @@ Saved Model: [bcweights.pth](bcweights.pth)
 
 ### Ideas for Future Work:
 
+Using Double DQN and Dueling DQN to improve training.
+Using Prioritized Experience Replay to further improve the training.
+
 
 
 
