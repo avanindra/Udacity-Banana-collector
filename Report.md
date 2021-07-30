@@ -4,22 +4,22 @@ This project train an agent to navigate and collect bananas in a large, square w
 
 
 
-Learning Algorithms:
+### Learning Algorithms:
 
 
 
-Chosen Hyperparameters:
+### Chosen Hyperparameters:
 
 
-Architecture of Neural Network Used:
-
-
-
-Plot of Rewards:
+### Architecture of Neural Network Used:
 
 
 
-Ideas for Future Work:
+### Plot of Rewards:
+
+
+
+### Ideas for Future Work:
 
 
 
