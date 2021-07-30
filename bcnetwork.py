@@ -6,7 +6,7 @@ class DeepQNetwork(nn.Module):
     """Policy network for the agent. It has input nodes as states and out nodes as action values.
        In essence it captures action value function for the policy."""
 
-    def __init__(self, state_size, action_size, layers, seed=199):
+    def __init__(self, state_size, action_size, seed=199):
         """Initialize parameters and build model.
         Params
         ======
@@ -17,9 +17,9 @@ class DeepQNetwork(nn.Module):
         """
         super(DeepQNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
-        self.fc1 = nn.Linear(state_size, layers[0], bias=False)
-        self.fc2 = nn.Linear(layers[0], layers[1], bias=False)
-        self.fc3 = nn.Linear(layers[1], action_size, bias=False)
+        self.fc1 = nn.Linear(state_size, 64, bias=False)
+        self.fc2 = nn.Linear(64, 64, bias=False)
+        self.fc3 = nn.Linear(64, action_size, bias=False)
 
     def forward(self, state):
         x = F.relu(self.fc1(state))

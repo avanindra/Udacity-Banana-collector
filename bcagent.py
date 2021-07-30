@@ -41,8 +41,8 @@ class Agent():
         self.losses = []
 
         # Q-Network
-        self.DeepQNetwork_w = DeepQNetwork(self.state_size, self.action_size, layers=nb_hidden, seed=seed).to(device)
-        self.DeepQNetwork_w_target = DeepQNetwork(self.state_size, self.action_size, layers=nb_hidden, seed=seed).to(device)       
+        self.DeepQNetwork_w = DeepQNetwork(self.state_size, self.action_size,  seed=seed).to(device)
+        self.DeepQNetwork_w_target = DeepQNetwork(self.state_size, self.action_size, seed=seed).to(device)       
         self.optimizer = optim.Adam(self.DeepQNetwork_w.parameters(), lr=self.learning_rate)
 
         # Define memory

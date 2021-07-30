@@ -1,3 +1,4 @@
+import sys
 from bcagent import Agent
 from datetime import datetime
 from collections import deque
@@ -86,7 +87,7 @@ agent = Agent(state_size=state_size, action_size=action_size, seed=199, nb_hidde
 
 scores, episodes, last_avg_score = DeepQLearnTrain(agent, n_episodes=600, early_stop=13, verbose=True)
 
-agent.save_model("bcweights.pth")
+agent.save_model("bcmodel.pt")
 
 # plot the scores
 fig = plt.figure()
