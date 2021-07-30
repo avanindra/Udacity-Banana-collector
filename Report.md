@@ -1,4 +1,4 @@
-# Project 1: Banana Collector
+# Project 1: Banana Collector (Report)
 
 This project train an agent to navigate and collect bananas in a large, square world.
 
@@ -6,19 +6,21 @@ This project train an agent to navigate and collect bananas in a large, square w
 
 ### Learning Algorithms:
 
-I used Deep Q-Neural Network (DQN) underlying learning algorithms for training the agent. Additionally I have used replay buffer to improve the training. Experience Replay is that save the experience(states, actions, rewards and next states in episodes) to Replay buffer. Therefore get a random samples to learn from saved experience. So we can learn the agent from much more experiences and there less bias in the training.
+I used Deep Q-Neural Network (DQN) underlying learning algorithms for training the agent. Additionally I have used Experience Replay to improve the training. Experience Replay stores the experiences(states, actions, rewards and next states in episodes) to a replay buffer, then we get random samples to learn from saved experiences. In this way ,  we can learn the agent from much more experiences and there is less bias in the training.
+
+I have also made use of Fixed Q-Targets, which essentially means that we keep two set of network weights, one target weights from which we compute the expected reward and other  weights which are updated for every experience tuple, which gives next set of actions to take.   
 
 
 ### Chosen Hyperparameters:
 
 Below are the hyper parameters which are used in this project:
-
-BUFFER_SIZE = int(1e6)  # replay buffer size <br />
-BATCH_SIZE = 64         # minibatch size  <br />
-GAMMA = 0.99            # discount factor <br />
-LR = 5e-4               # learning rate <br />
-UPDATE_FREQUENCY = 4    # how often to update the network <br />
-
+ <p>
+buffer_size = int(1e6)  &nbsp;&nbsp;&nbsp;&nbsp;# replay buffer size <br />
+batch_size = 64         &nbsp;&nbsp;&nbsp;&nbsp;# minibatch size  <br />
+gamma = 0.99            &nbsp;&nbsp;&nbsp;&nbsp;# discount factor <br />
+lr = 5e-4               &nbsp;&nbsp;&nbsp;&nbsp;# learning rate <br />
+update_frequency = 4    &nbsp;&nbsp;&nbsp;&nbsp;# how often to update the network <br />
+</p>
 
 ### Architecture of Neural Network Used:
 
@@ -39,6 +41,9 @@ Saved Model: [bcweights.pth](bcweights.pth)
 
 
 ### Ideas for Future Work:
+
+Using Double DQN and Dueling DQN to improve training.
+Using Prioritized Experience Replay to further improve the training.
 
 
 
